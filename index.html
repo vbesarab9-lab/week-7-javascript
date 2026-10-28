@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 - JavaScript Form</title>
+</head>
+<body>
+
+    <form id="myForm" onsubmit="formChecker(event)">
+        Name:
+        <input type="text" id="formName" required>
+        <br>
+
+        Email:
+        <input type="email" id="formEmail" required>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function formChecker(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("formName").value;
+            var email = document.getElementById("formEmail").value;
+
+            document.getElementById("myForm").style.display = "none";
+
+            document.getElementById("message").textContent =
+                name + ", thank you for your details. We will be in touch via "
+                + email + " shortly.";
+        }
+    </script>
+
+</body>
+</html>
